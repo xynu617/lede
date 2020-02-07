@@ -203,7 +203,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-pppoe-relay is not set
           # CONFIG_PACKAGE_luci-app-pptp-server is not set
           # CONFIG_PACKAGE_luci-app-privoxy is not set
-          CONFIG_PACKAGE_luci-app-qbittorrent=y
+          # CONFIG_PACKAGE_luci-app-qbittorrenty is not set
           # CONFIG_PACKAGE_luci-app-qos is not set
           # CONFIG_PACKAGE_luci-app-radicale is not set
           CONFIG_PACKAGE_luci-app-ramfree=y
@@ -266,6 +266,7 @@ jobs:
           CONFIG_PACKAGE_htop=y
           CONFIG_PACKAGE_wget=y
           CONFIG_PACKAGE_nano=y
+          CONFIG_PACKAGE_php7=y
           EOF
           
           # 取消默认的阿里云ddns插件:
