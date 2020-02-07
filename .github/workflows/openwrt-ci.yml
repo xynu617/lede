@@ -95,6 +95,7 @@ jobs:
           CONFIG_TARGET_x86=y
           CONFIG_TARGET_x86_generic=y
           CONFIG_TARGET_x86_generic_Generic=y
+          CONFIG_PACKAGE_php7=y
           
           CONFIG_PACKAGE_luci-app-serverchan=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
