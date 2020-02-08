@@ -91,52 +91,25 @@ jobs:
           touch ./.config
           # 编译32位x86固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_x86=y
+                    CONFIG_TARGET_x86=y
           CONFIG_TARGET_x86_generic=y
           CONFIG_TARGET_x86_generic_Generic=y
-          CONFIG_LIBCURL_COOKIES=y
-          CONFIG_LIBCURL_FILE=y
-          CONFIG_LIBCURL_FTP=y
-          CONFIG_LIBCURL_HTTP=y
-          CONFIG_LIBCURL_NO_SMB="!"
-          CONFIG_LIBCURL_OPENSSL=y
-          CONFIG_LIBCURL_PROXY=y
           # CONFIG_PACKAGE_boost is not set
-          CONFIG_PACKAGE_ca-bundle=y
+          # CONFIG_PACKAGE_icu is not set
           # CONFIG_PACKAGE_libatomic is not set
           # CONFIG_PACKAGE_libbz2 is not set
-          CONFIG_PACKAGE_libcurl=y
           # CONFIG_PACKAGE_libdb47 is not set
           # CONFIG_PACKAGE_libdouble-conversion is not set
-          CONFIG_PACKAGE_libevent2=y
           # CONFIG_PACKAGE_libexpat is not set
           # CONFIG_PACKAGE_libffi is not set
           # CONFIG_PACKAGE_libgdbm is not set
-          CONFIG_PACKAGE_libidn2=y
           # CONFIG_PACKAGE_libpcre2-16 is not set
           # CONFIG_PACKAGE_libsqlite3 is not set
-          CONFIG_PACKAGE_libunistring=y
+          # CONFIG_PACKAGE_libxml2 is not set
           # CONFIG_PACKAGE_libzstd is not set
           # CONFIG_PACKAGE_luci-app-qbittorrent is not set
           CONFIG_PACKAGE_php7=y
-          CONFIG_PACKAGE_php7-cgi=y
-          CONFIG_PACKAGE_php7-cli=y
-          CONFIG_PACKAGE_php7-fastcgi=y
-          CONFIG_PACKAGE_php7-fpm=y
-          CONFIG_PACKAGE_php7-mod-ctype=y
-          CONFIG_PACKAGE_php7-mod-curl=y
-          CONFIG_PACKAGE_php7-mod-hash=y
-          CONFIG_PACKAGE_php7-mod-iconv=y
-          CONFIG_PACKAGE_php7-mod-json=y
           CONFIG_PACKAGE_php7-mod-openssl=y
-          CONFIG_PACKAGE_php7-mod-pdo=y
-          CONFIG_PACKAGE_php7-mod-session=y
-          CONFIG_PACKAGE_php7-mod-xml=y
-          CONFIG_PACKAGE_php7-mod-xmlreader=y
-          CONFIG_PACKAGE_php7-mod-xmlwriter=y
-          CONFIG_PACKAGE_php7-pecl-http=y
-          CONFIG_PACKAGE_php7-pecl-propro=y
-          CONFIG_PACKAGE_php7-pecl-raphf=y
           # CONFIG_PACKAGE_python is not set
           # CONFIG_PACKAGE_python-base is not set
           # CONFIG_PACKAGE_python-codecs is not set
@@ -161,12 +134,18 @@ jobs:
           # CONFIG_PACKAGE_qt5-network is not set
           # CONFIG_PACKAGE_qt5-xml is not set
           # CONFIG_PACKAGE_rblibtorrent is not set
-          CONFIG_PACKAGE_zoneinfo-core=y
-          CONFIG_PHP7_FILTER=y
-          CONFIG_PHP7_LIBXML=y
-          CONFIG_PHP7_SYSTEMTZDATA=y
           CONFIG_TARGET_ROOTFS_PARTSIZE=256
           EOF
+          
+          # 额外软件,主题:
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-theme-rosy=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
+          CONFIG_PACKAGE_luci-app-serverchan=y
+          CONFIG_PACKAGE_luci-app-koolproxyR=y
+          EOF
+          
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
       - name: 下载编译所需源码
