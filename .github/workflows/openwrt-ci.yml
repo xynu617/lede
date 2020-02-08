@@ -129,7 +129,6 @@ jobs:
           EOF
           # LuCI插件选择:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-serverchan=y
           CONFIG_PACKAGE_luci-app-accesscontrol=y
           # CONFIG_PACKAGE_luci-app-acme is not set
           # CONFIG_PACKAGE_luci-app-adblock is not set
@@ -176,7 +175,6 @@ jobs:
           # CONFIG_PACKAGE_luci-app-hnet is not set
           # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
           # CONFIG_PACKAGE_luci-app-kodexplorer is not set
-          CONFIG_PACKAGE_luci-app-koolproxyR=y
           # CONFIG_PACKAGE_luci-app-lxc is not set
           # CONFIG_PACKAGE_luci-app-meshwizard is not set
           CONFIG_PACKAGE_luci-app-minidlna=y
@@ -254,11 +252,13 @@ jobs:
           # CONFIG_PACKAGE_luci-app-xlnetacc is not set
           CONFIG_PACKAGE_luci-app-zerotier=y
           EOF
-          # LuCI主题:
+          # 额外软件和主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-rosy=y
           CONFIG_PACKAGE_luci-theme-atmaterial=y
+          CONFIG_PACKAGE_luci-app-koolproxyR=y
+          CONFIG_PACKAGE_luci-app-serverchan=y
           EOF
           # 常用软件包:
           cat >> .config <<EOF
@@ -270,8 +270,9 @@ jobs:
           
           # 取消默认的阿里云ddns插件:
           cat >> .config <<EOF
-          # CONFIG_PACKAGE_ddns-scripts is not set
-          # CONFIG_PACKAGE_ddns-scripts_aliyun is not set
+          CONFIG_PACKAGE_ddns-scripts is not set
+          CONFIG_PACKAGE_ddns-scripts_aliyun is not set
+          CONFIG_PACKAGE_ddns-scripts_dnspod is not set
           EOF
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
