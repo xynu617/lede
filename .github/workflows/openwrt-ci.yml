@@ -77,7 +77,7 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-          git clone https://github.com/KFERMercer/luci-app-serverchan
+          git clone https://github.com/tty228/luci-app-serverchan
           git clone https://github.com/rosywrt/luci-theme-rosy
           git clone https://github.com/tzxiaozhen88/luci-app-koolproxyR
           
