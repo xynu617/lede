@@ -120,6 +120,7 @@ jobs:
           # CONFIG_PACKAGE_ddns-scripts is not set
           # CONFIG_PACKAGE_ddns-scripts_aliyun is not set
           # CONFIG_PACKAGE_ddns-scripts_dnspod is not set
+          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
           CONFIG_PACKAGE_hd-idle=y
           # CONFIG_PACKAGE_hostapd-common is not set
           CONFIG_PACKAGE_icu=y
