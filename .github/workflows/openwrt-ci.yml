@@ -107,7 +107,6 @@ jobs:
           # CONFIG_DRIVER_11N_SUPPORT is not set
           # CONFIG_DRIVER_11W_SUPPORT is not set
           CONFIG_PACKAGE_6in4=y
-          # CONFIG_PACKAGE_adbyby is not set
           CONFIG_PACKAGE_aria2=y
           CONFIG_PACKAGE_ariang=y
           # CONFIG_PACKAGE_ath9k-htc-firmware is not set
@@ -116,7 +115,6 @@ jobs:
           CONFIG_PACKAGE_boost-chrono=y
           CONFIG_PACKAGE_boost-random=y
           CONFIG_PACKAGE_boost-system=y
-          # CONFIG_PACKAGE_coreutils-nohup is not set
           # CONFIG_PACKAGE_ddns-scripts is not set
           # CONFIG_PACKAGE_ddns-scripts_aliyun is not set
           # CONFIG_PACKAGE_ddns-scripts_dnspod is not set
@@ -143,7 +141,7 @@ jobs:
           # CONFIG_PACKAGE_kmod-crypto-rng is not set
           # CONFIG_PACKAGE_kmod-crypto-sha256 is not set
           # CONFIG_PACKAGE_kmod-crypto-wq is not set
-          CONFIG_PACKAGE_kmod-fs-ntfs=y
+          # CONFIG_PACKAGE_kmod-fs-f2fs is not set
           # CONFIG_PACKAGE_kmod-ipsec is not set
           # CONFIG_PACKAGE_kmod-ipt-ipsec is not set
           CONFIG_PACKAGE_kmod-ipt-nat6=y
@@ -182,7 +180,6 @@ jobs:
           CONFIG_PACKAGE_libwebsockets-full=y
           CONFIG_PACKAGE_libxml2=y
           CONFIG_PACKAGE_libzstd=y
-          # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
           CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-baidupcs-web=y
           # CONFIG_PACKAGE_luci-app-ddns is not set
@@ -265,10 +262,6 @@ jobs:
           
           # 额外软件和主题:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-rosy=y
-          CONFIG_PACKAGE_luci-theme-atmaterial=y
-          CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_PACKAGE_luci-app-serverchan=y
           EOF
           sed -i 's/^[ \t]*//g' ./.config
